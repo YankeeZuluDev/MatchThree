@@ -1,2 +1,2 @@
 # MatchThree
-A repository for MatchThree game
+A repository for "Match Three" game
