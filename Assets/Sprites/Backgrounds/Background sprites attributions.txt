@@ -1,0 +1,4 @@
+Background1, Background2 and Background3 srites were made by CraftPix.net 2D Game Assets, 
+licenced under Attribution 3.0 Unported (CC BY 3.0)
+assets: https://opengameart.org/content/cartoon-vertical-game-backgrounds
+license: https://creativecommons.org/licenses/by/3.0/
