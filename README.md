@@ -23,4 +23,4 @@ Accessibility: Project can be freely explored in unity
 
 ## Best сode practices in this project
 
-### Zenject dependency injection
+### Dependency injection using Zenject framework
