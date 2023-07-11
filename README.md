@@ -24,3 +24,27 @@ Accessibility: Project can be freely explored in unity
 ## Best сode practices in this project
 
 ### Dependency injection using Zenject framework
+This project uses Zenject dependency injection framework to resolve dependencies in the code. Useage of this framework is helpflul to follow Dependency Inversion and Single Responsibility Principles. Zenject allows the project to turn into a collection of loosely coupled parts with highly segmented responsibilities. In this project all the game parts are created and their dependenices resolved scene-wide using [MatchThreeInstaller class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/Installers/MatchThreeInstaller.cs).
+
+### Great sliding window technique inplementation
+This project uses [MatchThreeCalculator class]() to calculate matches in the tile grid. [The algorithm for calculating the matches in the grid]() is using sliding-window technique. Here is short breakdown of the algorithm that was used:
+
+  Calculate horizontally matching tiles:
+  1. Iterate through every row to calculate horizontal matches
+  1. Declare left and right pointers that will be iterating through the current row
+  2. Shift window right if left tile and right tiles are matching
+  3. Add matching tiels in window to HashSet if number of matching tiles more or equal to minTilesToMatch value that is set in inspector
+  4. Reset winow before going to the next row
+  5. Iterate untill all rows are checked for matches
+  6. Repeat again but now iterate through every column to find vertical matches
+  7. Return HashSet* of unique matches
+     
+Time complexity: O(n^2) worst and average case
+
+* HashSet is created to be filled with matches. Particularly, HashSet data structure is used to guarantee, that matches are unique
+
+### Split responsibilities
+
+### Game event system
+
+### Prefab-based project architecture
