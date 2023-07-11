@@ -41,7 +41,7 @@ This project uses [MatchThreeCalculator class]() to calculate matches in the til
      
 Time complexity: O(n^2) worst and average case
 
-* HashSet is created to be filled with matches. Particularly, HashSet data structure is used to guarantee, that matches are unique
+*Note HashSet is created to be filled with matches. Particularly, HashSet data structure is used to guarantee, that matches are unique
 
 ### Split responsibilities
 
