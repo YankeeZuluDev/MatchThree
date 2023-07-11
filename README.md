@@ -50,7 +50,7 @@ Class responsibilities in this project are well defined and separated. Each clas
 * [GridTileSwapper](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/GridTileSwapper.cs)
 * [GridItemsManager](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/GridItemsManager.cs)
 
-Each part has it`s own corresponding prefab, that is instantiated and has it`s dependencies resolved by Zenject`s installer, allowing for great aggregation relations between these parts.
+Each part has it's own corresponding prefab, that is instantiated and has it's dependencies resolved by Zenject`s installer, allowing for great aggregation relations between these parts.
 
 ### Game event system
 This game uses an event system to handle in-game events such as LevelCompleteEvent or StartNewLevelEvent. The event system is implemented uisng ScriptableObjects, making it simple, convenient and extendible. The event system consists of 2 classes: GameEvent and GameEventListener. [GameEvent class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/Events/GameEvent.cs) provides a way to create custom game events that can be triggered by different components. It allows for flexible event handling and communication between different parts of the game. [GameEventListener class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/Events/GameEventListener.cs) is responsible for listening to a specific GameEvent and triggering a UnityEvent response when that event is raised. GameEventListener can be attached to any gameobject. Event system is implemented using [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern).
