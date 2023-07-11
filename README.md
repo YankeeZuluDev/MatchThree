@@ -34,7 +34,7 @@ This project uses [MatchThreeCalculator class]() to calculate matches in the til
   1. Declare left and right pointers that will be iterating through the current row
   2. Shift window right if left tile and right tiles are matching
   3. Add matching tiels in window to HashSet if number of matching tiles more or equal to minTilesToMatch value that is set in inspector
-  4. Reset winow before going to the next row
+  4. Reset window before going to the next row
   5. Iterate untill all rows are checked for matches
   6. Repeat again but now iterate through every column to find vertical matches
   7. Return HashSet* of unique matches
