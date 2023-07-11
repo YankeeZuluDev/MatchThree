@@ -27,7 +27,7 @@ Accessibility: Project can be freely explored in unity
 This project uses Zenject dependency injection framework to resolve dependencies in the code. Useage of this framework is helpflul to follow Dependency Inversion and Single Responsibility Principles. Zenject allows the project to turn into a collection of loosely coupled parts with highly segmented responsibilities. In this project all the game parts are created and their dependenices resolved scene-wide using [MatchThreeInstaller class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/Installers/MatchThreeInstaller.cs).
 
 ### Great sliding window technique inplementation
-This project uses [MatchThreeCalculator class]() to calculate matches in the tile grid. [The algorithm for calculating the matches in the grid]() is using sliding-window technique. Here is short breakdown of the algorithm that was used:
+This project uses [GridMatchCalculator class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/GridMatchCalculator.cs) to calculate matches in the tile grid. [The algorithm for calculating the matches in the grid](https://github.com/YankeeZuluDev/MatchThree/blob/0cfa622b094a41b9b341866270ac7b3d3b0b4475/Assets/Scripts/MatchThreeGrid/GridMatchCalculator.cs#L114C42-L114C42) is using sliding-window technique. Here is short breakdown of the algorithm that was used:
 
   Calculate horizontally matching tiles:
   1. Iterate through every row to calculate horizontal matches
@@ -44,7 +44,16 @@ This project uses [MatchThreeCalculator class]() to calculate matches in the til
 *HashSet is created to be filled with matches. Particularly, HashSet data structure is used to guarantee, that matches are unique to avoid counting twice both horizontally and vertically matching tiles.
 
 ### Split responsibilities
+Class responsibilities in this project are well defined and separated. Each class is responsible for only one thing. Match-3 board consists of the following parts:
+* [MatchThreeGrid](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/MatchThreeGrid.cs)
+* [GridMatchCalculator](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/GridMatchCalculator.cs)
+* [GridTileSwapper](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/GridTileSwapper.cs)
+* [GridItemsManager](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/GridItemsManager.cs)
+
+Each part has it`s own corresponding prefab, that is instantiated and has it`s dependencies resolved by Zenject`s installer, allowing for great aggregation relations between these parts.
 
 ### Game event system
+This game uses an event system to handle in-game events such as LevelCompleteEvent or StartNewLevelEvent. The event system is implemented uisng ScriptableObjects, making it simple, convenient and extendible. The event system consists of 2 classes: GameEvent and GameEventListener. [GameEvent class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/Events/GameEvent.cs) provides a way to create custom game events that can be triggered by different components. It allows for flexible event handling and communication between different parts of the game. [GameEventListener class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/Events/GameEventListener.cs) is responsible for listening to a specific GameEvent and triggering a UnityEvent response when that event is raised. GameEventListener can be attached to any gameobject. Event system is implemented using [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern).
 
 ### Prefab-based project architecture
+This project uses prefab-based design approach, utilizing the power of prefabs to create and organize all game parts. Prefab-based approach allows for reusability, efficiency, easier testing, better collaboration and significant time and effort savings when implementing new features to some game parts. Additionally it allows for more convenient game initialization and dependency resolving.
