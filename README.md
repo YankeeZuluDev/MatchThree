@@ -29,7 +29,7 @@ This project uses Zenject dependency injection framework to resolve dependencies
 ### Great sliding window technique inplementation
 This project uses [GridMatchCalculator class](https://github.com/YankeeZuluDev/MatchThree/blob/main/Assets/Scripts/MatchThreeGrid/GridMatchCalculator.cs) to calculate matches in the tile grid. [The algorithm for calculating the matches in the grid](https://github.com/YankeeZuluDev/MatchThree/blob/0cfa622b094a41b9b341866270ac7b3d3b0b4475/Assets/Scripts/MatchThreeGrid/GridMatchCalculator.cs#L114C42-L114C42) is using sliding-window technique. Here is short breakdown of the algorithm that was used:
 
-  Calculate horizontally matching tiles:
+  Calculate matching tiles algorithm:
   1. Iterate through every row to calculate horizontal matches
   1. Declare left and right pointers that will be iterating through the current row
   2. Shift window right if left tile and right tiles are matching
