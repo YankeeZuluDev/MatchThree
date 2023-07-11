@@ -39,7 +39,7 @@ This project uses [MatchThreeCalculator class]() to calculate matches in the til
   6. Repeat again but now iterate through every column to find vertical matches
   7. Return HashSet* of unique matches
      
-Time complexity: O(n^2) worst and average case
+**Time complexity: O(n^2)** worst and average case
 
 *HashSet is created to be filled with matches. Particularly, HashSet data structure is used to guarantee, that matches are unique to avoid counting twice both horizontally and vertically matching tiles.
 
