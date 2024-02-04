@@ -5,6 +5,8 @@ A repository for "Match Three" game
 
 [:video_game: **Play**](https://play.google.com/store/apps/details?id=com.YankeeZulu.MatchTiles)
 
+[:100: **Best code practices**](#best-code-practices-in-this-project)
+
 ## About the game
 Genre: casual, puzzle
 
